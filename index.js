@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }).then(() => {
         displayMessage("LIFF initialized");
         liff.getProfile().then((profile) => {
+            displayMessage("profile loaded");
             onLogin(profile.avatarUr, profile.name, profile.status);
         }).catch ((error) => {
             displayMessage(error);
