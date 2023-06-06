@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
             onLogin(profile.avatarUr, profile.name, profile.status);
         }).catch ((error) => {
             displayMessage(error);
+            onLogin('https://placekitten.com/g/200/300', "No-Name", "Demo");
         });
     }).catch((error) => {
         displayMessage(error);
@@ -23,7 +24,7 @@ function onLogin(avatarUr, name, status) {
     const nameElement = document.querySelector('.profile__name');
     const statusElement = document.querySelector('.profile__status');
 
-    avatarElement.src = 'https://placekitten.com/g/200/300';
-    nameElement.textContent = 'John Doe';
-    statusElement.textContent = 'Online';
+    avatarElement.src = avatarUr;
+    nameElement.textContent = name;
+    statusElement.textContent = status;
 }
