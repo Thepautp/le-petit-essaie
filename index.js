@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         displayMessage("LIFF initialized");
         liff.getProfile().then((profile) => {
             displayMessage(`profile loaded: |${profile}|`);
-            const avatarUrl = profile.avatarUr;
+            const avatarUrl = profile.pictureUrl;
             const name = profile.displayName;
             const status = profile.statusMessage;
 
