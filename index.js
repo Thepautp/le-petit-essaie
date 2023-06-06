@@ -4,9 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }).then(() => {
         displayMessage("LIFF initialized");
         liff.getProfile().then((profile) => {
-            displayMessage(`profile loaded: ${profile}`);
-            onLogin(profile.avatarUr, profile.name, profile.status);
-        }).catch ((error) => {
+            displayMessage(`profile loaded: |${profile}|`);
+            const avatarUrl = profile.avatarUr;
+            const name = profile.displayName;
+            const status = profile.statusMessage;
+
+            onLogin(avatarUrl, name, status);
+        }).catch((error) => {
             displayMessage(error);
             onLogin('https://placekitten.com/g/200/300', "No-Name", "Demo");
         });
