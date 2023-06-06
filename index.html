@@ -2,77 +2,23 @@
 <html>
 
 <head>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            position: fixed;
-            left: 0;
-            bottom: 150px; /* Adjust this value to set the distance between buttons and message banner */
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .button {
-            display: inline-block;
-            margin: 0 5px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #messageBanner {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 125px;
-            text-align: center;
-            padding: 10px;
-            background-color: #f1f1f1;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-    <title>TITLE</title>
+    <script src="index.js"></script>
+    <title>Le petit essaie</title>
 </head>
 
 <body>
-    <div class="container">
-        <button class="button">Button 1</button>
-        <button class="button">Button 2</button>
-    </div>
+    <main>
+        <div class="container">
+            <div class="sub-container">
+                <button class="button">Button 1</button>
+                <button class="button">Button 2</button>
+            </div>
+        </div>
 
-    <div id="messageBanner">No messages</div>
-
-    <script>
-        // Initialize LIFF SDK
-        window.onload = function () {
-            liff.init({
-                liffId: "1661282389-E5XPXoVd",
-            }).then(() => {
-                displayMessage("LIFF initialized");
-            }).catch ((error) => {
-                displayMessage(error);
-            });
-        };
-
-        // Function to display message in the banner
-        function displayMessage(message) {
-            var messageBanner = document.getElementById('messageBanner');
-            messageBanner.innerText = message;
-        }
-    </script>
+        <div id="error">N/A</div>
+    </main>
 </body>
 
 </html>
